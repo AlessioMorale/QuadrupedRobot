@@ -3,6 +3,6 @@
 #
 
 set -x
-sudo cp i2c3.dtbo /boot/firmware/overlays/
-sudo cp at24.ko /lib/modules/`uname -r`/kernel/drivers/nvmem/
+sudo cp i2c3_pupper.dtbo /boot/firmware/overlays/
+sudo modprobe at24
 sudo depmod -a

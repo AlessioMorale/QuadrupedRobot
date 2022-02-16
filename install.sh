@@ -2,8 +2,6 @@
 # Install Mangdang Pupper-Mini
 
 # Overlay dtbo, IO configuration and services
-sudo cp Mangdang/PWMController/i2c-pwm-pca9685a.dtbo /boot/firmware/overlays/
-sudo cp Mangdang/EEPROM/i2c3.dtbo /boot/firmware/overlays/
 sudo cp Mangdang/IO_Configuration/syscfg.txt /boot/firmware/ -f
 sudo cp Mangdang/IO_Configuration/config.txt /boot/firmware/ -f
 sudo cp Mangdang/stuff/*.mp3 /home/ubuntu/Music/ -f
