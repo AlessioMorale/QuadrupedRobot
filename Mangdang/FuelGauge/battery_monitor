@@ -29,7 +29,7 @@ sleep 1
 while true
 do
 	current_voltage=`cat /sys/class/power_supply/max1720x_battery/voltage_now`
-	if [ $current_voltage -le 6500 ]; then
+	if [ $current_voltage -le 3350000 ]; then
 		echo 0 > /sys/class/gpio/gpio25/value
 		echo 0 > /sys/class/gpio/gpio21/value
 		su ubuntu -l -c "mpg123 /home/ubuntu/Music/low_power.mp3"
