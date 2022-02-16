@@ -7,7 +7,7 @@ dtparam=i2c1
 dtoverlay=i2c3_pupper,pins_4_5
 dtoverlay=i2c4_pupper,pins_6_7
 dtoverlay=spi0-1cs
-dtoverlay=i2c-pwm-pca9685a
+dtoverlay=i2c-pwm-pca9685a_pupper
 dtoverlay=gpio-fan
 dtparam=audio=on
 dtoverlay=audremap,pins_18_19
