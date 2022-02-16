@@ -1,26 +1,28 @@
 #!/usr/bin/env sh
 # Install Mangdang Pupper-Mini
 
+dir_path=$(dirname $(realpath $0))
+
 # Overlay dtbo, IO configuration and services
-sudo cp Mangdang/IO_Configuration/syscfg.txt /boot/firmware/ -f
-sudo cp Mangdang/IO_Configuration/config.txt /boot/firmware/ -f
-sudo cp Mangdang/stuff/*.mp3 /home/ubuntu/Music/ -f
+sudo cp ${dir_path}/Mangdang/IO_Configuration/syscfg.txt /boot/firmware/ -f
+sudo cp ${dir_path}/Mangdang/IO_Configuration/config.txt /boot/firmware/ -f
+sudo cp ${dir_path}/Mangdang/stuff/*.mp3 /home/ubuntu/Music/ -f
 
 # Install mangdang power-on service
-cd /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/FuelGauge
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/FuelGauge/install.sh
-cd /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/System
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/System/install.sh
+cd ${dir_path}/Mangdang/FuelGauge
+sudo bash ${dir_path}/Mangdang/FuelGauge/install.sh
+cd ${dir_path}/Mangdang/System
+sudo bash ${dir_path}/Mangdang/System/install.sh
 
 # Install Mangdang EEPROM
-cd /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/EEPROM
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/EEPROM/install.sh
+cd ${dir_path}/Mangdang/EEPROM
+sudo bash ${dir_path}/Mangdang/EEPROM/install.sh
 
 # Install Mangdang PWM Controller
-cd /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/PWMController
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/Mangdang/PWMController/install.sh
+cd ${dir_path}/Mangdang/PWMController
+sudo bash ${dir_path}/Mangdang/PWMController/install.sh
 
 # Install standford robot and UDPComms services
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/StanfordQuadruped/install.sh
-sudo bash /home/ubuntu/Robotics/QuadrupedRobot/UDPComms/install.sh
+sudo bash ${dir_path}/StanfordQuadruped/install.sh
+sudo bash ${dir_path}/UDPComms/install.sh
 
